@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane prefHeight="776.0" prefWidth="1143.0">
+         <children>
+            <RadioButton fx:id="answerBButton" layoutX="335.0" layoutY="463.0" mnemonicParsing="false" text="RadioButton" />
+            <TableView fx:id="questionTableView" layoutX="59.0" layoutY="33.0" prefHeight="270.0" prefWidth="432.0">
+              <columns>
+                <TableColumn fx:id="idColumn1" prefWidth="66.0" text="Q. number" />
+                <TableColumn fx:id="descriptionColumn1" minWidth="0.0" prefWidth="193.0" text="Description" />
+                  <TableColumn fx:id="correctAnswerColumn1" prefWidth="97.0" text="CorrectAnswer" />
+                  <TableColumn fx:id="pointsColumn1" prefWidth="75.0" text="Points" />
+              </columns>
+            </TableView>
+            <TableView fx:id="quizTableView" layoutX="509.0" layoutY="33.0" prefHeight="270.0" prefWidth="376.0">
+              <columns>
+                <TableColumn fx:id="idColumn2" prefWidth="75.0" text="Q. number" />
+                <TableColumn fx:id="descriptionColumn2" prefWidth="125.0" text="Description" />
+                  <TableColumn fx:id="correctAnswerColumn2" prefWidth="98.0" text="Correct answer" />
+                  <TableColumn fx:id="pointsColumn2" prefWidth="77.0" text="Points" />
+              </columns>
+            </TableView>
+            <TableView fx:id="answersTableView" layoutX="904.0" layoutY="33.0" prefHeight="270.0" prefWidth="225.0">
+              <columns>
+                <TableColumn fx:id="questionIdColumn" prefWidth="75.0" text="Q. number" />
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Student" />
+                  <TableColumn fx:id="numberOfPointsColumn" prefWidth="75.0" text="Points" />
+              </columns>
+            </TableView>
+            <ComboBox fx:id="questionComboBox" layoutX="59.0" layoutY="331.0" prefWidth="150.0" />
+            <Label fx:id="questionLabel" layoutX="59.0" layoutY="413.0" text="Label" />
+            <RadioButton fx:id="answerCButton" layoutX="654.0" layoutY="463.0" mnemonicParsing="false" text="RadioButton" />
+            <Button fx:id="sendAnswerButton" layoutX="61.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleSelectAnswer" text="Submit answer" />
+            <Button fx:id="sendResults" layoutX="509.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleSendResults" text="Send results" />
+            <Label layoutX="59.0" layoutY="614.0" text="Name:" />
+            <Label fx:id="nameLabel" layoutX="118.0" layoutY="614.0" text="Label" />
+            <Label fx:id="resultTextLabel" layoutX="59.0" layoutY="653.0" text="Result:" />
+            <Label fx:id="pointsLabel" layoutX="118.0" layoutY="653.0" text="Label" />
+            <Label fx:id="maxPointsLabel" layoutX="1003.0" layoutY="335.0" text="Label" />
+            <Button fx:id="sendQuestionButton" layoutX="309.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleAddQuestion" text="Send question" />
+            <RadioButton fx:id="answerAButton" layoutX="50.0" layoutY="463.0" mnemonicParsing="false" text="RadioButton" />
+            <Label fx:id="maxPointsTextLabel" layoutX="912.0" layoutY="335.0" text="Max points:" />
+         </children></Pane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
