@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import repositories.AnswersRepository;
 import repositories.QuestionRepository;
+import repositories.Repository;
 import services.Service;
 import utils.MemberType;
 
@@ -18,9 +19,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        QuestionRepository questionRepository = new QuestionRepository("data/quizzes.txt");
+        QuestionRepository questionRepo = new QuestionRepository("data/quizzes.txt");
         AnswersRepository answersRepository = new AnswersRepository("data/testResults.txt");
-        Service questionService = new Service(questionRepository, answersRepository);
+        Service questionService = new Service(questionRepo, answersRepository);
+
+//        if(questionRepository instanceof Repository) {
+//            System.out.println("True");
+//        }
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("sample.fxml"));
@@ -35,7 +40,6 @@ public class Main extends Application {
         stage.show();
 
         List<String> args = getParameters().getRaw();
-        System.out.println(args);
         for (String name:
              args) {
             FXMLLoader loaderStudent = new FXMLLoader();
